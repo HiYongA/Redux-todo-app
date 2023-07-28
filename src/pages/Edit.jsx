@@ -11,8 +11,8 @@ const Edit = () => {
   const todos = useSelector((state) => state.todos);
   const editedTodo = todos.find((todo) => todo.id === id);
 
-  const [editedTitle, handleEditedTitle] = useInput();
-  const [editedBody, handleEditedBody] = useInput();
+  const [editedTitle, handleEditedTitle] = useInput(editedTodo.title);
+  const [editedBody, handleEditedBody] = useInput(editedTodo.body);
 
   const handleEditedTodoSubmit = (e) => {
     e.preventDefault();
